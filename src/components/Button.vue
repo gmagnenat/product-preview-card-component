@@ -38,6 +38,8 @@ export default {
 
 .btn img {
 	width: 16px;
+	height: 16px;
+	object-fit: contain;
 	margin-right: 1rem;
 }
 
