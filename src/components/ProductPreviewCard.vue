@@ -2,7 +2,11 @@
 	<div class="previewCard">
 		<div class="previewCard-col">
 			<p class="previewCard-subheading">Perfume</p>
-			<h1 class="previewCard-heading">Gabrielle Essence Eau De Parfum</h1>
+			<h1 class="previewCard-heading">
+				Gabrielle<br />
+				Essence Eau De<br />
+				Parfum
+			</h1>
 			<p class="previewCard-body">
 				A floral, solar and voluptuous interpretation composed by Olivier Polge,
 				Parfumer-Creator for the House of CHANEL
@@ -14,15 +18,6 @@
 			<Button class="previewCard-button" />
 		</div>
 		<div class="previewCard-col">
-			<!-- <img
-				class="previewCard-image"
-				srcset="
-					../assets/image-product-mobile.jpg  374w,
-					../assets/image-product-desktop.jpg
-				"
-				sizes="(min-width: 374px) 600px"
-				alt="Channel Parfum bottle"
-			/> -->
 			<picture>
 				<source
 					class="previewCard-image"
