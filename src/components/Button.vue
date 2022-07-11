@@ -47,7 +47,7 @@ export default {
 	background-color: var(--color-deep-aquamarine);
 }
 
-@media screen and (min-width: 375px) {
+@media screen and (min-width: 650px) {
 	.btn {
 		margin-top: 2.9rem;
 	}

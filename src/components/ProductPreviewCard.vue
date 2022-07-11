@@ -123,7 +123,7 @@ export default {
 	text-decoration: line-through;
 }
 
-@media screen and (min-width: 375px) {
+@media screen and (min-width: 650px) {
 	.previewCard {
 		width: 600px;
 		display: grid;
