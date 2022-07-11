@@ -1,24 +1,45 @@
 <template>
 	<div class="previewCard">
 		<div class="previewCard-col">
-			<p>Perfume</p>
-			<h1>Gabrielle Essence Eau De Parfum</h1>
-			<p>
-				A floral, solar and voluptuous interpretation composed by Oliver Polge,
+			<p class="previewCard-subheading">Perfume</p>
+			<h1 class="previewCard-heading">Gabrielle Essence Eau De Parfum</h1>
+			<p class="previewCard-body">
+				A floral, solar and voluptuous interpretation composed by Olivier Polge,
 				Parfumer-Creator for the House of CHANEL
 			</p>
 			<div class="previewCard-price">
-				<p class="previewCard-price-actual">$100</p>
-				<p class="previewCard-price-original dashed">$200</p>
+				<p class="previewCard-price-actual">$149.99</p>
+				<p class="previewCard-price-original dashed">$169.99</p>
 			</div>
-			<Button />
+			<Button class="previewCard-button" />
 		</div>
 		<div class="previewCard-col">
-			<img
+			<!-- <img
 				class="previewCard-image"
-				src="../assets/image-product-desktop.jpg"
-				alt=""
-			/>
+				srcset="
+					../assets/image-product-mobile.jpg  374w,
+					../assets/image-product-desktop.jpg
+				"
+				sizes="(min-width: 374px) 600px"
+				alt="Channel Parfum bottle"
+			/> -->
+			<picture>
+				<source
+					class="previewCard-image"
+					media="(max-width: 374px)"
+					srcset="../assets/image-product-mobile.jpg"
+				/>
+				<source
+					class="previewCard-image"
+					media="(min-width: 375px)"
+					srcset="../assets/image-product-desktop.jpg"
+				/>
+				<img
+					class="previewCard-image"
+					src="../assets/image-product-desktop.jpg"
+					alt="Channel Parfum Bottle"
+				/>
+			</picture>
 		</div>
 	</div>
 </template>
@@ -37,52 +58,65 @@ export default {
 
 <style scoped>
 .previewCard {
-	max-width: 600px;
+	width: 320px;
 	position: absolute;
-	top: 45%;
+	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	background-color: #f5f5f5;
-	border-radius: 4px;
+	border-radius: 10px;
+
+	display: flex;
+	flex-direction: column;
 
 	color: var(--color-green);
-
-	display: grid;
-	grid-template-columns: 1fr 1fr;
 
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .previewCard-col:first-of-type {
-	padding: 2rem;
+	padding: 2.4rem;
 
 	align-items: center;
 	justify-content: center;
 	order: 1;
 }
 
-.previewCard h1 {
-	font-size: 1.5rem;
-	font-weight: 500;
-	margin-bottom: 1rem;
+.previewCard-heading {
+	margin-top: 1.2rem;
+}
+
+.previewCard-subheading {
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-size: 1.2rem;
+}
+
+.previewCard-body {
+	margin-top: 1.6rem;
 }
 
 .previewCard-image {
 	width: 100%;
-	height: auto;
+	height: 100%;
+	max-height: 240px;
 	object-fit: cover;
 	border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
 }
 
 .previewCard-price {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+
+	margin-top: 2.4rem;
 }
 
 .previewCard-price .previewCard-price-actual {
-	margin-right: 1rem;
+	font-family: var(--ff-heading);
+	color: var(--color-primary);
+	margin-right: 3.2rem;
 }
 
 .previewCard-price-actual {
@@ -92,5 +126,43 @@ export default {
 
 .dashed {
 	text-decoration: line-through;
+}
+
+@media screen and (min-width: 375px) {
+	.previewCard {
+		width: 600px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.previewCard-image {
+		width: 100%;
+		height: 100%;
+		max-height: 100%;
+		object-fit: cover;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 0;
+		border-bottom-left-radius: 10px;
+	}
+
+	.previewCard-col:first-of-type {
+		padding: 3.2rem;
+
+		align-items: center;
+		justify-content: center;
+		order: 1;
+	}
+
+	.previewCard-heading {
+		margin-top: 1.8rem;
+	}
+
+	.previewCard-body {
+		margin-top: 2.3rem;
+	}
+
+	.previewCard-price {
+		margin-top: 3.3rem;
+	}
 }
 </style>

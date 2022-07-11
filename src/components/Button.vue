@@ -1,5 +1,5 @@
 <template>
-	<button class="previewCard-button">
+	<button class="btn">
 		<img src="../assets/icon-cart.svg" alt="" />
 		Add to Cart
 	</button>
@@ -14,14 +14,15 @@ export default {
 </script>
 
 <style scoped>
-.previewCard-button {
-	background-color: var(--color-green);
+.btn {
+	background-color: var(--color-primary);
 	color: #fff;
 	border: none;
 	padding: 1.2rem 1rem;
 	width: 100%;
-	border-radius: 4px;
-	font-size: 1rem;
+	height: 4.8rem;
+	border-radius: 8px;
+	font-size: 1.4rem;
 	font-weight: 600;
 	cursor: pointer;
 
@@ -30,15 +31,23 @@ export default {
 	justify-content: center;
 	align-items: center;
 
+	margin-top: 2rem;
+
 	transition: all 0.2s ease-in-out;
 }
 
-.previewCard-button img {
-	width: 10px;
-	margin-right: 0.5rem;
+.btn img {
+	width: 16px;
+	margin-right: 1rem;
 }
 
-.previewCard-button:hover {
-	background-color: #ffb300;
+.btn:hover {
+	background-color: var(--color-deep-aquamarine);
+}
+
+@media screen and (min-width: 375px) {
+	.btn {
+		margin-top: 2.9rem;
+	}
 }
 </style>
